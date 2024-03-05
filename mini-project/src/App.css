@@ -1,11 +1,18 @@
 
 /* NAVBAR */
 .navBar {
-  background-color: aquamarine;
-  height: 75px;
+  background-color: #f4612c;
+  height: 80px;
   display: flex;
   align-items: center;
-  color: #005757;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.75);
 }
 
 .navBar h1 {
@@ -14,7 +21,7 @@
 
 .logo{
   height: 70px;
-  margin-left: 20%;
+  margin-left: 2%;
 }
 
 /* MAIN CONTENT */
@@ -22,14 +29,67 @@
   display: flex;
 }
 
+.cardPlate{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  flex-direction: row;
+  background-color: white;
+  padding: 2%;
+margin: 10px;
+border: 1px solid lightgray;
+border-radius: 8px;
+-webkit-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75);
+}
+
+.cardPlate button{
+  height: 30px;
+}
+
+.listRecipes {
+margin: 0;
+padding: 0;
+}
+
+.cardPlate img{
+  width: 90px;
+  border-radius: 20px;
+}
+
+.cardPlate:hover{
+  background-color: lightgray;
+}
+
+.list{
+  width: 98%;
+  margin-top: 60px;
+}
+.contentList{
+  margin-top: 80px;
+  width: 100%;
+  margin-left: 8px;
+  margin-bottom: 80px;
+}
+.contentTitle{
+  width: 100%;
+  background-color: #114e35;
+  color: white;
+  position: fixed;
+  top: 80px;
+}
+
 .title-recipes{
   display: flex;
   margin-top: 0;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 77%;
   height: 40px;
-  background-color: lightgray;
+  margin: 0;
+  padding: 0 33px;
 }
 .title-recipes li{
   list-style: none;
@@ -38,16 +98,25 @@
 }
 
 
-.cardPlate{
-  display: block;
-}
+
 
 /* SIDEBAR */
+
+.aside{
+  background-color: white;
+  width: 17%;
+  -webkit-box-shadow: 3px 0px 9px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 0px 9px 0px rgba(0,0,0,0.75);
+box-shadow: 3px 0px 9px 0px rgba(0,0,0,0.75);
+z-index: 1;
+}
 .options {
-  background-color: lightblue;
+  background-color: white;
+  position: fixed;
+  top: 80px;
   padding: 0;
   margin: 0;
-  width: 170px;
+  width: 15%;
   height: 100vh;
 }
 .options li{
@@ -68,23 +137,75 @@
 
 /* Footer */
 .footer {
-  background-color: aquamarine;
+  background-color: #f4612c;
   height: 50px;
   position: fixed;
   bottom: 0;
   width: 100%;
-
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.75);
+z-index: 2;
 }
 
 
 
 .footer a {
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  color: #005757;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  margin-right: 8px;
+
+}
+.footer small {
+  font-size: 12px;
 }
 
+
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 50%; /* 30px from the bottom */
+}
+#snackbar.show {
+  visibility: visible; 
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to { opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from { opacity: 1;}
+  to { opacity: 0;}
+}
+
+@keyframes fadeout {
+  from { opacity: 1;}
+  to { opacity: 0;}
+}

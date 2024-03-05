@@ -8,9 +8,9 @@ import Recipes from './components/Recipes';
 function App() {
   
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar></Navbar>
-      <div className='main-content' >
+      <div className="main-content" >
         <Sidebar></Sidebar>
         <Recipes></Recipes>
       </div>

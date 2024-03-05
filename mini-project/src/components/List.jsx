@@ -6,11 +6,9 @@ const List = () => {
 
     const [recipes, setRecipes] = useState(dataRecipes);
 
-   
-
   return (
 
-    <ul>
+    <ul className="listRecipes">
       {recipes.map((plate) => {
         //   {console.log(plate.id)}
         return (
