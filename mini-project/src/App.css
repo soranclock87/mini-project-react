@@ -38,6 +38,10 @@
 }
 
 
+.cardPlate{
+  display: block;
+}
+
 /* SIDEBAR */
 .options {
   background-color: lightblue;

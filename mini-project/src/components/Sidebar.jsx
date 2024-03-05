@@ -2,7 +2,7 @@
 
 const Sidebar = () => {
   return (
-    <div class="aside">
+    <div className="aside">
       <ul className="options">
         <li>Recipes</li>
         <li>Add new Recipe</li>
