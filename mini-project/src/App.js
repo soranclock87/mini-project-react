@@ -3,19 +3,27 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
-import Recipes from './components/Recipes';
+import Recipes from './pages/Recipes';
+import { Routes, Route } from 'react-router-dom';
+import NotFound from './pages/NotFound';
+import AboutUs from './pages/AboutUs';
+import RecipeDetail from './pages/RecipeDetail';
 
 function App() {
   
   return (
     <div className="App" >
       <Navbar></Navbar>
-      <div className="main-content" >
-        <Sidebar></Sidebar>
-        <Recipes></Recipes>
-      </div>
-     
       <Footer></Footer>
+
+        <Routes>
+          <Route path="/" element={<Recipes/>}/>
+          <Route path="/recipe/:recipeId" element={<RecipeDetail />}/>
+          <Route path="/about" element={<AboutUs/>}/>
+          <Route path="*" element={<NotFound/>}/>
+          
+        </Routes>
+
     </div>
   );
 }

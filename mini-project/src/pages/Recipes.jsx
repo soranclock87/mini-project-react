@@ -1,9 +1,13 @@
-import List from "./List"
-
+import List from "../components/List"
+// import Navbar from "./Navbar"
+import Sidebar from "../components/Sidebar"
 const Recipes = () => {
   return (
     <div className="contentList">
+
+      <Sidebar></Sidebar>
       {/* title bar */}
+      <div>
       <div className="contentTitle">
         <ul className="title-recipes">
           <li>Name</li>
@@ -18,8 +22,10 @@ const Recipes = () => {
       {/* list of recipes */}
       <div className="list">
         <List />
-        <div id="snackbar">Some text some message..</div>
+        <div id="snackbar">Some text some message</div>
       </div>
+      </div>
+      
     </div>
   )
 }

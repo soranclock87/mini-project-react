@@ -1,6 +1,7 @@
 import ListItem from "./ListItem"
 import dataRecipes from "../data/data.json"
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 const List = () => {
 
@@ -10,9 +11,10 @@ const List = () => {
 
     <ul className="listRecipes">
       {recipes.map((plate) => {
-        //   {console.log(plate.id)}
         return (
-             <ListItem plate={plate} key={plate.id} setRecipes={setRecipes} allRecipes={recipes}/>
+          <Link to={`/recipe/${plate.id}`} key={plate.id}>
+            <ListItem plate={plate} key={plate.id} setRecipes={setRecipes} allRecipes={recipes}/>
+          </Link>
         )
       })
 

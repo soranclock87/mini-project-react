@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 
 const ListItem = ({plate,allRecipes,setRecipes}) => {
     const handleDelete = ()=> {
@@ -10,10 +12,14 @@ const ListItem = ({plate,allRecipes,setRecipes}) => {
       setRecipes(allRecipes.filter((current) => current.id != plate.id))
     }
 
+    // console.log("plate is :", plate)
     // console.log(recipe.calories)
   return (
     <>
-      <li className="cardPlate"  key={plate.id}>
+      
+      
+      
+      <li className="cardPlate"  key={plate.id} >
 
         <p><b>{plate.name}</b> {plate.calories <= 300 ? "🥰": "🤮"}</p>
         <p>{plate.calories}</p>
