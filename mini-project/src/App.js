@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App" >
       <Navbar></Navbar>
+      <Sidebar/>
       <Footer></Footer>
 
         <Routes>

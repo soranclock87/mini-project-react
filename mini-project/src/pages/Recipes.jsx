@@ -3,9 +3,9 @@ import List from "../components/List"
 import Sidebar from "../components/Sidebar"
 const Recipes = () => {
   return (
-    <div className="contentList">
+    <div className="content-list">
 
-      <Sidebar></Sidebar>
+      {/* <Sidebar></Sidebar> */}
       {/* title bar */}
       <div>
       <div className="contentTitle">
