@@ -20,11 +20,13 @@ const ListItem = ({plate,allRecipes,setRecipes}) => {
       
       
       <li className="cardPlate"  key={plate.id} >
-
+        <Link className="cardPlate-inside" to={`/recipe/${plate.id}`} key={plate.id}>
         <p><b>{plate.name}</b> {plate.calories <= 300 ? "🥰": "🤮"}</p>
         <p>{plate.calories}</p>
         <img src={plate.image} alt="" />
         <p>{plate.servings}</p>
+        </Link>
+        <Link to={`/update/${plate.id}`}><button>Edit Recipe</button></Link>
         <button onClick={handleDelete}>Detele element</button>
       </li>
     </>

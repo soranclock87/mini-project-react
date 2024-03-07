@@ -1,7 +1,7 @@
 import List from "../components/List"
 // import Navbar from "./Navbar"
 import Sidebar from "../components/Sidebar"
-const Recipes = () => {
+const Recipes = ({recipes, setRecipes}) => {
   return (
     <div className="content-list">
 
@@ -21,7 +21,7 @@ const Recipes = () => {
 
       {/* list of recipes */}
       <div className="list">
-        <List />
+        <List recipes={recipes} setRecipes={setRecipes}/>
         <div id="snackbar">Some text some message</div>
       </div>
       </div>
