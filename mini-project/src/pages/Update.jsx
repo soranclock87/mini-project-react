@@ -51,8 +51,11 @@ const Update = ({recipes,setRecipes}) => {
     
   return (
     <>
+    
     <div className="content-page">
-       <form className="recipe-form" onSubmit={handleUpdateRecipes} >
+    <Link to="/" className="back-button"><button> {'<'} Back</button></Link>
+      <div className="card">
+      <form className="recipe-form" onSubmit={handleUpdateRecipes} >
       <label>
         Recipe Name:</label>
         <input
@@ -97,8 +100,10 @@ const Update = ({recipes,setRecipes}) => {
           }}
         />
       
-      <button className="create-new" type="submit">Update Recipe</button>
+      <button className="action-btn" type="submit">Update Recipe</button>
     </form>
+      </div>
+      
     </div>
     </>
   )

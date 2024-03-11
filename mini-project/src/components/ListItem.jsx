@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
-
+import TrashIcon from "../assets/trash.png";
+import EditIcon from "../assets/edit.png";
 
 const ListItem = ({plate,allRecipes,setRecipes}) => {
     const handleDelete = ()=> {
@@ -26,8 +27,8 @@ const ListItem = ({plate,allRecipes,setRecipes}) => {
         <img src={plate.image} alt="" />
         <p>{plate.servings}</p>
         </Link>
-        <Link to={`/update/${plate.id}`}><button>Edit Recipe</button></Link>
-        <button onClick={handleDelete}>Detele element</button>
+        <Link to={`/update/${plate.id}`}><button className="btn-edit"><img src={EditIcon} alt="" /></button></Link>
+        <button className="btn-delete" onClick={handleDelete}> <img src={TrashIcon} alt="trash Icon" /></button>
       </li>
     </>
   )

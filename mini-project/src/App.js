@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Recipes recipes={recipes} setRecipes={setRecipes}/>}/>
           <Route path="/update/:recipeId" element={<Update recipes={recipes} setRecipes={setRecipes}/>}/>
-          <Route path="/recipe/:recipeId" element={<RecipeDetail />}/>
+          <Route path="/recipe/:recipeId" element={<RecipeDetail recipes={recipes}/>}/>
           <Route path="/newRecipe" element={<NewRecipe recipes={recipes} setRecipes={setRecipes} />}/>
           <Route path="/about" element={<AboutUs/>}/>
           <Route path="*" element={<NotFound/>}/>

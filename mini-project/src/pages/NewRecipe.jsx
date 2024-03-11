@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NewRecipe = ({recipes, setRecipes }) => {
 
@@ -11,14 +11,21 @@ const NewRecipe = ({recipes, setRecipes }) => {
     const [servings, setServings] = useState();
     const nav = useNavigate();
 
-    console.log(recipes)
-    console.log("size of  array", recipes.length)
+     
+    // console.log("size of  array", recipes.length)
     const handleCreateRecipe = (event) => {
       event.preventDefault();
       const newRecipe= { id: recipes.length + 1,name, calories, image, servings, };
       setRecipes([...recipes, newRecipe]);
+      console.log(recipes)
+      console.log(newRecipe.image)
       nav("/");
 
+    }
+
+    function handleChange(e) {
+        console.log(e.target.files);
+        setImage(URL.createObjectURL(e.target.files[0]));
     }
 
   return (
@@ -50,15 +57,16 @@ const NewRecipe = ({recipes, setRecipes }) => {
         
         <label>
           Image:</label>
-          <input
+          {/* <input
             placeholder="url of image"
             type="text"
             value={image}
             onChange={(event) => {
               setImage(event.target.value);
             }}
-          />
-        
+          /> */}
+         <input type="file"  onChange={handleChange}  />
+
         <label>
           Servings:</label>
           <input
@@ -70,7 +78,7 @@ const NewRecipe = ({recipes, setRecipes }) => {
             }}
           />
         
-        <button className="create-new" type="submit">Create Recipe</button>
+        <button className="action-btn" type="submit">Create Recipe</button>
       </form>
         </div>
 

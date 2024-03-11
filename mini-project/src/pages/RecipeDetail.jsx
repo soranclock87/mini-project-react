@@ -1,14 +1,15 @@
 
-import dataRecipes from "../data/data.json"
+
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const RecipeDetail = () => {
+const RecipeDetail = ( {recipes}) => {
     
     const { recipeId } = useParams();
-      const plate = dataRecipes.find((recipe) => recipe.id == recipeId);
+      const plate = recipes.find((recipe) => recipe.id == recipeId);
    
       console.log("details", recipeId)
+      console.log("image" , plate.image)
       
   return (
     <div className="content-page">
